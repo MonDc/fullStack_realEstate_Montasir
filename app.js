@@ -30,9 +30,6 @@ const port = process.env.PORT || 5000;
 
 //app.use('/register', authRoutes);
 
-//app.get('/', (req, res) => {
-//    res.render('index')
-//});
 
 
 
