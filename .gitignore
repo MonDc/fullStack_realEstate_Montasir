@@ -6,3 +6,5 @@ mysql_connection
 readme.txt
 emailVerfiy.js
 details.ejs
+node_modules
+imgs_real_estate
