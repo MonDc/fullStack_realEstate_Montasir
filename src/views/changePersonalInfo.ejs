@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+<%-include('partials/header')%>
+
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+  <div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+
+
+    <%-include('partials/navigation', {active: active})%>
+
+
+
+
+
+
+
+    <div class="ftco-blocks-cover-1">
+      <div class="site-section-cover overlay" data-stellar-background-ratio="0.5"
+        style="background-image: url('/images/hero_1.jpg')">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-7">
+              <br> <br> <br>
+              <h1 class="mb-2"style="color:#91b029">Change Personal Info</h1>
+              <br>
+              <h4 class="text-white">Here you can update your informations
+              </h4>
+              
+              <h2 class="<%=error?"text-danger":"text-success"%>"><%=message%></h2>
+               <br>
+
+              
+
+
+
+              <form action="/admin/changePersonalInfo" method="post" enctype="multipart/form-data">
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" name="firstName" value="<%=existedUser.firstName%>">
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" name="lastName" value="<%=existedUser.lastName%>">
+                  </div>
+
+                </div>
+
+
+
+
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <input type="date" class="form-control" name="dateOfBirth" value="<%=existedUser.dateOfBirth%>">
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" name="mobile" value="<%=existedUser.mobile%>">
+                  </div>
+
+
+
+                </div>
+
+
+                <div class="form-group row">
+
+
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" name="address" value="<%=existedUser.address%>">
+                  </div>
+
+
+                </div>
+
+
+
+                <div class="form-group row">
+                  <div class="col-md-6">
+                    <input type="password" class="form-control" name="password" value="<%=existedUser.password%>">
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="password" class="form-control" name="Re-Password" value="<%=existedUser.password%>">
+                  </div>
+                </div>
+
+
+                <div class="form-group row">
+                  <div class="col-md-4"><img class="img-thumbnail" id="profile-img-tag" src="<%=existedUser.imgUrl%>"
+                      style="width:100px;height:100px"></div>
+                  <label class="col-md-4 control-label text-white" for="profile-img">Profile Photo</label>
+                  <div class="col-md-4">
+
+                    <!-- this is the config of the multer in ejs -->
+                    <input id="profile-img" class="text-white" name="file" type="file" >
+                  </div>
+                </div>
+
+
+
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <div class="col-md-12 mr-auto">
+                      <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Save Change">
+                    </div>
+                  </div>
+
+
+                  
+
+
+
+                </div>
+                  
+                      
+
+              </form>
+
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="site-section bg-light" id="contact-section">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <%-include('partials/footer')%>
+
+
+  </div>
+
+
+  <%-include('partials/scripts')%>
+
+
+
+
+
+  <!-- show preview image when click choose file  -->
+
+
+  <script type="text/javascript">
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $('#profile-img-tag').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+    $("#profile-img").change(function () {
+      readURL(this);
+    });
+  </script>
+
+  <!--end... show preview image when click choose file  -->
+
+
+
+
+
+
+  <!-- to show default image -->
+
+  <!-- <script>
+       
+    $('#profile-img-tag').attr('src', '/images/hero_1.jpg');
+
+</script> -->
+
+  <!--end to show default image -->
+
+
+
+
+
+
+
+</body>
+
+</html>

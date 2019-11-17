@@ -1,0 +1,68 @@
+how to reciev firstname and lastname inputs on email module and show them within the email that we will recieve in dcmonhal@yandex.com??
+
+///session in register and log in 
+//add user(mobile)data type
+///how get array values and insert in DB(checkbox list)
+
+//get profile values(dateofBirth)
+
+///////bodyParser in changePersonalInfo (post(req.body))
+
+
+not all users in user manag
+
+////id in update and delete
+
+/////////////////////
+
+
+/////delete old user photo whenn update   (fs rename or unlink)
+
+users table 
+
+  search Key Words
+
+  Postal Code
+
+
+////////////
+
+
+  
+
+
+
+
+
+////////////////
+
+order by date does not work in advmanag
+
+wenn update :add more details  does not work and open (if i dont add any thing when I add the adv)
+
+
+wenn update : span number not correct at begin
+
+
+update adv photos
+
+
+ admin/advManag for the normal user should be prohibited
+
+ 
+checkbox needs at least one element to make the function work
+
+
+
+
+
+
+
+
+
+
+//////////
+
+paginachen
+
+

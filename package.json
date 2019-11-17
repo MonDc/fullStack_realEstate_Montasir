@@ -1,0 +1,28 @@
+{
+  "name": "real_estate_prototype",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack app.js",
+    "test": "nodemon --inspect app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "dotenv": "^8.1.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.2.0",
+    "multer": "^1.4.1",
+    "mysql": "^2.17.1",
+    "nodemailer": "^6.3.1",
+    "upper-case": "^1.1.3"
+  }
+}

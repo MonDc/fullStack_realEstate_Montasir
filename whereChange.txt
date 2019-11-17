@@ -1,0 +1,37 @@
+/login starting remove extra sections
+
+/index partial testimonial line: 553
+
+/admin partial testimonial line: 322
+
+/agents partials testimonial line 162
+
+/contact partials testimonial line 111
+/property partials testimonial line 316
+/details partials testimonial 239
+
+/ style.css   line: 818  site-section: 2rem  0 2.5rem 
+
+
+
+
+/ 3 images to public/images with a corresponding details and names in testimonial partial with removing all lorum
+
+/  text changes and links in footer
+/about was completey changed with the related style.css
+
+
+/ add advertisemtn from windows does not work
+
+/agent text changes and
+
+/ error by edit proile saga agent.
+
+/ contact text changes
+/ property text changes 
+/ login remove white section
+
+/admin deleting blog post section and our agent section
+/index editing texts
+
+/style.css for the big bg image   height: calc(70vh - 196px)

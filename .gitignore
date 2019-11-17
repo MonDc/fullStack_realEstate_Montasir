@@ -1,0 +1,8 @@
+node_modules
+.vscode
+.env
+ii.html
+mysql_connection
+readme.txt
+emailVerfiy.js
+details.ejs

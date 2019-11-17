@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+
+<%-include('partials/header')%>
+
+
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+  <div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+
+
+    <%-include('partials/navigation')%>
+
+
+    <div class="ftco-blocks-cover-1">
+      <div class="site-section-cover overlay" data-stellar-background-ratio="0.5"
+        style="background-image: url('images/hero_1.jpg')">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-7">
+              <br>
+              <h2 class="<%=error?"text-danger":"text-success"%>"><%=message%></h2>
+              <br>
+              <h1 class="mb-2"style="color:#91b029">Our Properties</h1>
+              <h4 class="text-white">Find the latest published advertisements and contact the responsible agent.</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+
+
+
+    <div class="realestate-filter">
+        <div class="container">
+          <div class="realestate-filter-wrap nav">
+            <a href="#for-rent" class="active" data-toggle="tab" id="rent-tab" aria-controls="rent"
+              aria-selected="true">For Rent</a>
+            <a href="#for-sale" class="" data-toggle="tab" id="sale-tab" aria-controls="sale" aria-selected="false">For Sell</a>
+  
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="realestate-tabpane pb-5">
+        <div class="container tab-content">
+          <div class="tab-pane active" id="for-rent" role="tabpanel" aria-labelledby="rent-tab">
+  
+           
+  
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <input id="searchCountry" type="text" class="form-control" placeholder="Country">
+              </div>
+              <div class="col-md-4 form-group">
+                <input id="searchCity" type="text" class="form-control" placeholder="City">
+              </div>
+              <div class="col-md-4 form-group">
+                <input id="searchDistrict" type="text" class="form-control" placeholder="District">
+              </div>
+            </div>
+  
+  
+  
+  
+  
+  
+  
+            <div class="row">
+              <div class="col-md-4 form-group">
+                <input id="searchPostalCode" type="text" class="form-control" placeholder="Postal Code">
+              </div>
+              <div class="col-md-4 form-group">
+                <input id="searchKeywords" type="text" class="form-control" placeholder="Key Words">
+              </div>
+  
+              <div class="col-md-4 form-group">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input id="searchCMinPrice" type="number" class="form-control w-100" placeholder="Min Price">
+  
+                    </input>
+                  </div>
+                  <div class="col-md-6">
+                    <input id="searchMaxPrice" type="number" class="form-control w-100" placeholder="Max Price">
+  
+                    </input>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
+  
+  
+            <div class="row">
+  
+              <div class="col-md-4 form-group">
+                <div class="row">
+  
+                  <div class="">
+                    <div class="funkyradio-default floatCheckBox">
+                      <input type="checkbox" class="ck" name="checkbox" id="checkbox1" value="Balkon" />
+                      <label for="checkbox1">Balkon</label>
+                    </div>
+                    <div class="funkyradio-primary floatCheckBox">
+                      <input type="checkbox" class="ck" name="checkbox" id="checkbox2" value="Einbauküche" />
+                      <label for="checkbox2">Einbauküche</label>
+                    </div>
+                    <div class="funkyradio-success floatCheckBox">
+                      <input type="checkbox" class="ck" name="checkbox" id="checkbox3" value="Garten" />
+                      <label for="checkbox3">Garten</label>
+                    </div>
+                    <div class="funkyradio-danger floatCheckBox">
+                      <input type="checkbox" class="ck" name="checkbox" id="checkbox4" value="Aufzug" />
+                      <label for="checkbox4">Aufzug</label>
+                    </div>
+                    <div class="funkyradio-warning floatCheckBox">
+                      <input type="checkbox" class="ck" name="checkbox" id="checkbox5" value="Terrasse" />
+                      <label for="checkbox5">Terrasse</label>
+                    </div>
+                    <div class="funkyradio-info floatCheckBox">
+                      <input type="checkbox" class="ck" name="checkbox" id="checkbox6" value="Keller" />
+                      <label for="checkbox6">Keller</label>
+                    </div>
+  
+                    <div class="funkyradio-info floatCheckBox">
+                      <input type="checkbox" class="ck" name="checkbox" id="checkbox7" value="Gäste-WC" />
+                      <label for="checkbox7">Gäste-WC</label>
+                    </div>
+  
+                  </div>
+  
+  
+                </div>
+              </div>
+            </div>
+  
+  
+  
+  
+            <div class="row">
+              <div class="col-md-4">
+                <button id="searchBtn" class="btn btn-black py-3 btn-block">Search</button>
+              </div>
+            </div>
+  
+          </div>
+  
+  
+  
+        </div>
+      </div>
+  
+     
+  
+      <div class="site-section  block-14" style="display:none" id="showResult">
+        <div class="container">
+          <div class="row justify-content-center" id="searchResult" >
+  
+          </div>
+
+
+        </div>
+      </div>
+      <!-- /////////////////////////////////// -->
+
+
+   
+
+
+    <div class="site-section bg-black">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-6 text-center">
+                <h3 class="heading-29201 text-center text-white">Our Properties</h3>
+    
+                <p class="mb-5 text-white"> To see more details about the property , please click on it 
+                 
+                </p>
+              </div>
+            </div>
+    
+
+        <div class="row">
+
+          <%for (let i = 0; i < advs.length; i++) {%>
+
+
+          <div class="col-md-4 mb-5">
+            <div class="media-38289">
+              <a href="/singleProperty?advId=<%= advs[i].id%>" class="d-block"><img style="width:352px;height:262px;"
+                  src="<%=advs[i].path%>" alt="Image" class="img-fluid "></a>
+              <div class="text">
+                <div class="d-flex justify-content-between mb-3">
+                  <div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span>
+                    <span><%=advs[i].title.length>20?advs[i].title.substring(0, 25)+"......":advs[i].title%></span>
+                  </div>
+                  <div class="bed d-flex align-items-center">
+                    <span><%=advs[i].forSell=="Sell"?"For Sell":"For Rent"%></span>
+                  </div>
+
+                </div>
+                <h3 class="mb-3"><a href="#"><%=advs[i].price%> Euro </a></h3>
+                <span class="d-block small address d-flex align-items-center"> <span
+                    class="icon-room mr-3 text-primary"></span> <span><%=advs[i].city%>,
+                    <%=advs[i].district%></span></span>
+              </div>
+            </div>
+          </div>
+          <%}%>
+
+
+          <!-- <div class="col-12 mt-5 text-center pagination-39291">
+            <span class="active">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+          </div> -->
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <%-include('partials/testimonial')%>
+
+
+          <%-include('partials/footer')%>
+
+
+        </div>
+
+
+        <%-include('partials/scripts')%>
+
+
+
+        <script>
+            var searchTags = [];
+            $('.floatCheckBox input').change(function (e) {
+              e.preventDefault();
+              let gotvalue = $(this).val();
+              if (this.checked) {
+                if (searchTags.indexOf(gotvalue) == -1) {
+                  searchTags.push(gotvalue)
+                }
+              } else {
+                if (searchTags.indexOf(gotvalue) != -1) {
+                  searchTags = searchTags.splice(searchTags.indexOf(gotvalue), 1)
+                }
+              }
+
+            });
+            $('#searchBtn').click(function (e) {
+              e.preventDefault();
+              $('#showResult').show()
+              $.ajax({
+                method: "POST",
+                url: "/search",
+                data: {
+                  forSell: $('.realestate-filter-wrap a.active').text().replace('For ', ''),
+                  country: $('#searchCountry').val(),
+                  city: $('#searchCity').val(),
+                  district: $('#searchDistrict').val(),
+                  postalCode: $('#searchPostalCode').val(),
+                  keyWord: $('#searchKeywords').val(),
+                  minPrice: $('#searchCMinPrice').val(),
+                  maxPrice: $('#searchMaxPrice').val(),
+                  tags: searchTags.toString()
+                },
+                success: function (advs) {
+                  $('#searchResult').empty();
+                  //render here
+                  for (let i = 0; i < advs.length; i++) {
+
+
+                    let item = $('<div class="col-md-4 mb-5">' +
+                      '<div class="media-38289">' +
+                      '<a href="/singleProperty?advId=' + advs[i].id + '" class="d-block"><img style="width:352px;height:262px;"  src="' + advs[i].path + '" alt="Image"' +
+                      'class="img-fluid "></a>' +
+                      '<div class="text">' +
+                      '<div class="d-flex justify-content-between mb-3">' +
+                      '<div class="sq d-flex align-items-center"><span class="wrap-icon icon-fullscreen"></span> <span>' + (advs[i].title.length > 20 ? advs[i].title.substring(0, 25) + '......' : advs[i].title) + '</span></div>' +
+                      '<div class="bed d-flex align-items-center"> <span>' + (advs[i].forSell == 'Sell' ? 'For Sell' : 'For Rent') + '</span>' +
+                      '</div>' +
+                      '</div>' +
+                      '<h3 class="mb-3"><a href="/singleProperty?advId=' + advs[i].id + '">' + advs[i].price + ' Euro </a></h3>' +
+                      '<span class="d-block small address d-flex align-items-center"> <span' +
+                      'class="icon-room mr-3 text-primary"></span> <span>' + advs[i].city + ', ' + advs[i].district + '</span></span>' +
+                      '</div>' +
+                      '</div>' +
+                      '</div>');
+                      
+
+                    $('#searchResult').append(item);
+                    
+                    
+                  }
+
+                },
+                error: function (e) {
+                  console.log(e)
+                }
+              });
+
+
+            });
+          </script>
+
+
+
+<script>
+
+$('#pagg').pagination({
+    dataSource: [1, 2, 3, 4, 5, 6, 7, ... , 100],
+    pageSize: 1,
+    formatResult: function(data) {
+        var result = [];
+        for (var i = 0, len = data.length; i < len; i++) {
+            result.push(data[i] + ' - hi');
+        }
+        return result;
+    },
+    callback: function(data, pagination) {
+        // template method of yourself
+        var html = template(data);
+        dataContainer.html(html);
+    }
+})
+</script>
+
+
+
+
+</body>
+
+</html>

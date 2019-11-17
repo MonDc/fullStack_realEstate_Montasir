@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<%-include('partials/header')%>
+
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+  <div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+
+    <%-include('partials/navigation')%>
+
+
+    <div class="ftco-blocks-cover-1">
+      <div class="site-section-cover overlay" data-stellar-background-ratio="0.5"
+        style="background-image: url('/images/hero_1.jpg')">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-7">
+                <br> <br> <br>
+
+              <h1 class="mb-2"style="color:#91b029">Login</h1>
+              <h4 class="text-white">Please enter your Email and password to login</h4>
+              <br>
+              <h2 class="<%=error?"text-danger":"text-success"%>"><%=message%></h2>
+              <br>
+              <form action="/login" method="post">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" name="userNameloginname"
+                    placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="passwordloginname"
+                    placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox mr-sm-2">
+                    <input type="checkbox" id="customControlAutosizing">
+                    <label class="text-white" for="customControlAutosizing">Remember me</label>
+                  </div>
+                </div>
+                <button type="submit" class="btn vizew-btn w-100 mt-30">Login</button>
+              </form>
+
+
+              <div style="padding:5px; ">
+                <h4 class="text-white">If you still not registered, Please sign up </h4>
+                <a href="/register" class="btn btn-primary text-white " style="padding:15px;margin:20px">Reigister</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <%-include('partials/testimonial')%>
+
+
+
+
+    <%-include('partials/footer')%>
+
+
+  </div>
+
+  <%-include('partials/scripts')%>
+
+  <% if(wrongUser){%>
+
+  <!-- user is  exist modal -->
+
+  <!-- Button trigger modal-->
+
+
+  <!-- Modal: modalAbandonedCart-->
+  <div class="modal fade right" id="modalAbandonedCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" data-backdrop="false">
+    <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header bg-primary">
+          <p class="heading">Login Failed
+          </p>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+
+        <!--Body-->
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-3">
+              <p></p>
+              <p class="text-center"><i class="fas fa-shopping-cart fa-4x"></i></p>
+            </div>
+
+            <div class="col-9">
+
+              <p>Sorry your Email or password is wrong</p>
+              <p>Or your account is blocked</p>
+              <p>Or your account is not yet verify</p>
+              <p>No account yet? <a href="/register">Register</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!--Footer-->
+        <div class="modal-footer justify-content-center">
+
+          <a type="button" class="btn btn-primary waves-effect" data-dismiss="modal">Retry</a>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!-- Modal: modalAbandonedCart-->
+
+  <script>
+    $('#modalAbandonedCart').modal('show');
+  </script>
+  <!-- finish user is  exist comment -->
+  <%}%>
+
+
+</body>
+
+</html>
